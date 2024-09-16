@@ -1,5 +1,5 @@
 #  EECS 22L Chess Remake
-This is a remake of the first project at UCI's course in advanced C programming. This was my first full-length project (drawing assets, build scripts, etc.) and was completed over the course of two weeks. The original attempt of this project consisted of a group of six people. Given that it was our first group project, there were a few unfortunate hurdles and the final product was far from desirable. The intention behind this remake is to trying fixing those past errors.
+This is a remake of the first project at UCI's course in advanced C-programming. This was my first full-length project (drawing assets, build scripts, etc.) and was completed over the course of two weeks. The original attempt of this project consisted of a group of six people. Given that it was our first group project, there were a few unfortunate hurdles and the final product was far from desirable. The intention behind this remake is to trying fixing those past errors.
 
 ## Description
 ![A preview of the game](/assets/preview.png)
@@ -22,6 +22,7 @@ The program consists of a basic chess game. It allows for all basic types of mov
 - Direct to the parent folder (where the CMakeLists.txt is located) and run:
 ` bash run.sh`
 (Note: if running on PuTTY, ensure X11 forwarding is enabled. MobaXTerm has this feature built-in. Also if there are issues with '/r' on the linux servers then run `dos2unix run.sh` first, although this should not be necessary)
+
 **If there are issues running it on windows, try creating an empty build folder. Then inside the folder run `cmake ..` and then `make` to get the executable.**
 
 
