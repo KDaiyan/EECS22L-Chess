@@ -25,7 +25,7 @@ int AI::evaluateBoard(const Board& board, const Move& move) {
     int value, score = 0;
     for(size_t i{}; i < 8; i++) {
         for(size_t j{}; j < 8; j++) {
-            if(board[i][j] != nullptr) {
+            if(board[i][j] != BLANK) {
                 value = getPieceValue(*(board[i][j]));
                 score += board[i][j]->getTeam() == currentTeam ? value : (-1 * value);
             }
