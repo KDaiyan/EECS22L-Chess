@@ -8,7 +8,7 @@
 #include <cassert>
 
 // Initialize all the pieces of the board
-Board::Board(Team team) : m_currentTeamTurn(Team::WHITE) {
+Board::Board(Team team) : currentTeamTurn(Team::WHITE) {
     initializeMap();
 
     constexpr Type pieceLayout[] = {Type::ROOK, Type::KNIGHT, Type::BISHOP, Type::QUEEN,
@@ -25,7 +25,7 @@ Board::Board(Team team) : m_currentTeamTurn(Team::WHITE) {
 
 bool Board::movePiece(Position startPos, Position endPos) {
     // Flip all positions if its Black
-    if(m_currentTeamTurn == Team::BLACK) {
+    if(currentTeamTurn == Team::BLACK) {
         startPos.rank = 7 - startPos.rank;
         startPos.file = 7 - startPos.file;
         endPos.rank = 7 - endPos.rank;
@@ -33,7 +33,7 @@ bool Board::movePiece(Position startPos, Position endPos) {
     }
 
     Piece* piece = grid[startPos.rank][startPos.file].get();
-    if(piece == EMPTY || piece->getTeam() != m_currentTeamTurn || !Check::canMoveToSpot(*this, startPos, endPos)) return false;
+    if(piece == EMPTY || piece->getTeam() != currentTeamTurn || !Check::canMoveToSpot(*this, startPos, endPos)) return false;
     
     // Perform castling move and return early
     if(checkUtils::isCastlingMove(*this, startPos, endPos)) {
@@ -54,7 +54,6 @@ bool Board::movePiece(Position startPos, Position endPos) {
     return true;
 }
 
-// Surely there's a better way to do this?
 void Board::rotateBoard() {
     for(size_t i{}; i < 4; i++) 
         for (size_t j{}; j < 8; j++) {
@@ -68,10 +67,10 @@ void Board::rotateBoard() {
 }
 
 void Board::changeTurns() {
-    m_currentTeamTurn = m_currentTeamTurn == Team::WHITE ? Team::BLACK : Team::WHITE;
+    currentTeamTurn = currentTeamTurn == Team::WHITE ? Team::BLACK : Team::WHITE;
 }
 
-Board::Board(const Board& board) : m_currentTeamTurn(board.getCurrentTurn()), castlingCheck(board.castlingCheck) {
+Board::Board(const Board& board) : currentTeamTurn(board.getCurrentTurn()), castlingCheck(board.castlingCheck) {
     for(size_t i{}; i < 8; i++) {
         for(size_t j{}; j < 8; j++) {
             if (board.grid[i][j] != EMPTY) {
@@ -84,7 +83,7 @@ Board::Board(const Board& board) : m_currentTeamTurn(board.getCurrentTurn()), ca
 }
 
 Team Board::getCurrentTurn() const {
-    return m_currentTeamTurn;
+    return currentTeamTurn;
 }
 
 void Board::initializeMap() {
