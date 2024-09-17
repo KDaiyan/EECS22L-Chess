@@ -12,7 +12,7 @@ The program consists of a basic chess game. It allows for all basic types of mov
 - CMake 3.26.5
 
 ## Installation Guide
-> This installation process is meant primarily for the UCI Linux servers but the program can be built and run on other platforms with a few additional steps.
+> This installation process is meant primarily for the UCI Linux servers but the program can be built and run on windows/mac platforms with a few additional steps.
 > 
 >If not on the Linux servers:
 >-  install all three programs listed under software requirements.
