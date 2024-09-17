@@ -7,7 +7,7 @@
 
 class Board {
     private:
-    Team m_currentTeamTurn;
+    Team currentTeamTurn;
 
     struct castlingBool {
         bool whiteLeftRook, whiteRightRook, whiteKing,
