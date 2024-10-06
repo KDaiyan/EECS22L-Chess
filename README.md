@@ -1,4 +1,4 @@
-#  EECS 22L Chess Remake
+#  EECS 22L Chess
 This is a remake of the first project at UCI's course in advanced C-programming. This was my first full-length project (drawing assets, build scripts, etc.) and was completed over the course of two weeks. The original attempt of this project consisted of a group of six people. Given that it was our first group project, there were a few unfortunate hurdles and the final product was far from desirable. The intention behind this remake is to make it where it seg-faults every other game instead of every game.
 
 ## Description
